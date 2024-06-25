@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Flow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Welcome Screen -->
+        <div class="screen" id="welcomeScreen">
+            <h1>HELLO TO  [My App]</h1>
+            <button onclick="showScreen('signupOptionsScreen')">create new account</button>
+            <button onclick="showLogin()">Log In</button>
+        </div>
+        
+        <!-- Signup Options Screen -->
+        <div class="screen" id="signupOptionsScreen">
+            <button onclick="signUpWith('facebook')">Sign Up with Facebook</button>
+            <button onclick="signUpWith('google')">Sign Up with Google</button>
+            <button onclick="signUpWith('apple')">Sign Up with Apple</button>
+            <button onclick="showScreen('signupFormScreen')">Sign Up with Email</button>
+        </div>
+        
+        <!-- Signup Form Screen -->
+        <div class="screen" id="signupFormScreen">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="showScreen('verificationScreen')">Next</button>
+        </div>
+        
+        <!-- Verification Screen -->
+        <div class="screen" id="verificationScreen">
+            <input type="text" id="otp" placeholder="Enter OTP">
+            <button onclick="verifyOtp()">Verify</button>
+        </div>
+        
+        <!-- Profile Setup Screen -->
+        <div class="screen" id="profileSetupScreen">
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="bio" placeholder="Bio">
+            <button onclick="showScreen('termsConditionsScreen')">Complete Profile</button>
+        </div>
+        
+        <!-- Terms and Conditions Screen -->
+        <div class="screen" id="termsConditionsScreen">
+            <input type="checkbox" id="terms">
+            <label for="terms">I agree to the Terms and Conditions and Privacy Policy</label>
+            <button onclick="agreeAndContinue()">Agree and Continue</button>
+        </div>
+        
+        <!-- Onboarding Screen -->
+        <div class="screen" id="onboardingScreen">
+            <div class="onboarding-step">
+                <h2>Welcome to [App Name]!</h2>
+                <p>Here you can...</p>
+                <button onclick="nextOnboardingStep()">Next</button>
+            </div>
+            <div class="onboarding-step">
+                <h2>Discover features...</h2>
+                <p>Here you can...</p>
+                <button onclick="nextOnboardingStep()">Next</button>
+            </div>
+            <div class="onboarding-step">
+                <h2>Get started now!</h2>
+                <button onclick="showScreen('homeScreen')">Get Started</button>
+            </div>
+        </div>
+        
+        <!-- Home Screen -->
+        <div class="screen" id="homeScreen">
+            <h1>Hi, [Username]!</h1>
+            <p>Welcome to the Home Screen</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
